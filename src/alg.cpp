@@ -1,16 +1,18 @@
 // Copyright 2022 NNTU-CS
+#include "tree.h"
 
 #include <algorithm>
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <locale>
-#include "tree.h"
+#include <vector>
+
 
 
 PMTree::PMTree(const std::vector<char>& symbols) {
-    root = new Node('\0');
-    size = symbols.size();
+  root = new Node('\0');
+  size = symbols.size();
 
     std::vector<char> sorted = symbols;
     std::sort(sorted.begin(), sorted.end());
@@ -52,7 +54,9 @@ void PMTree::clear(Node* node) {
     delete node;
 }
 
-static void collect(Node* node, std::vector<char>& current,std::vector<std::vector<char>>& result) {
+static void collect(Node* node, 
+                    std::vector<char>& current,
+                    std::vector<std::vector<char>>& result) {
     if (!node) {
         return;
     }
