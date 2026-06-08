@@ -4,26 +4,26 @@
 #include <vector>
 
 struct Node {
-    char value;
-    std::vector<Node*> children;
+  char value;
+  std::vector<Node*> children;
 
-    explicit Node(char v) : value(v) {}
+  explicit Node(char v) : value(v) {}
 };
 
 class PMTree {
-    public:
-    explicit PMTree(const std::vector<char>& symbols);
-    ~PMTree();
+ public:
+  explicit PMTree(const std::vector<char>& symbols);
+  ~PMTree();
 
-    Node* getRoot() const;
-    int getSize() const;
+  Node* getRoot() const;
+  int getSize() const;
 
-    private:
-    Node* root;
-    int size;
+ private:
+  Node* root;
+  int size;
 
-    void build(Node* node, std::vector<char> symbols);
-    void clear(Node* node);
+  void build(Node* node, std::vector<char> symbols);
+  void clear(Node* node);
 };
 
 std::vector<std::vector<char>> getAllPerms(PMTree& tree);
