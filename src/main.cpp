@@ -62,7 +62,10 @@ int main() {
             totalPerms *= i;
         }
 
-        int randomNum = rand() % totalPerms + 1;
+        int randomNum = totalPerms / 2;
+        if (randomNum == 0) {
+           randomNum = 1;
+}
         clock_t start2 = clock();
         getPerm1(testTree, randomNum);
         clock_t end2 = clock();
@@ -77,9 +80,6 @@ int main() {
         << "  getPerm1 = " << (end2 - start2)
         << "  getPerm2 = " << (end3 - start3)
         << "\n";
-
-
     }
     return 0;
-
 }
