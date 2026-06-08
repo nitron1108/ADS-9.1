@@ -1,5 +1,4 @@
 // Copyright 2022 NNTU-CS
-#include "tree.h"
 
 #include <algorithm>
 #include <cstdlib>
@@ -8,7 +7,7 @@
 #include <locale>
 #include <vector>
 
-
+#include "tree.h"
 
 PMTree::PMTree(const std::vector<char>& symbols) {
   root = new Node('\0');
@@ -54,7 +53,7 @@ void PMTree::clear(Node* node) {
     delete node;
 }
 
-static void collect(Node* node, 
+static void collect(Node* node,
                     std::vector<char>& current,
                     std::vector<std::vector<char>>& result) {
     if (!node) {
